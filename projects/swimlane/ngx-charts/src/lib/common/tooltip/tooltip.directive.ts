@@ -6,7 +6,7 @@ import {
   HostListener,
   ViewContainerRef,
   Renderer2,
-  OnDestroy
+  OnDestroy,
 } from '@angular/core';
 
 import { PlacementTypes } from './position';
@@ -35,6 +35,7 @@ export class TooltipDirective implements OnDestroy {
   @Input() tooltipShowEvent: ShowTypes = ShowTypes.all;
   @Input() tooltipContext: any;
   @Input() tooltipImmediateExit: boolean = false;
+  @Input() tooltipArea: any;
 
   @Output() show = new EventEmitter();
   @Output() hide = new EventEmitter();
@@ -146,9 +147,10 @@ export class TooltipDirective implements OnDestroy {
 
     // content close on click outside
     if (this.tooltipCloseOnClickOutside) {
-      this.documentClickEvent = this.renderer.listen('window', 'click', event => {
-        const contains = tooltip.contains(event.target);
-        if (!contains) this.hideTooltip();
+      this.documentClickEvent = this.renderer.listen('window', 'click', ({ target} ) => {
+        if (this.tooltipArea !== target && !tooltip.contains(target)) {
+          this.hideTooltip();
+        }
       });
     }
   }
