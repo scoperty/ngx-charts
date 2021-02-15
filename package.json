@@ -24,8 +24,7 @@
     "prepack": "npm run package",
     "pack": "npm pack ./dist/swimlane/ngx-charts",
     "prettier": "prettier --write \"{src,projects}/**/*.{js,ts,html,scss,css,md,json}\"",
-    "prettier:ci": "prettier --check \"{src,projects}/**/*.{js,ts,html,scss,css,md,json}\"",
-    "postinstall": "ngcc"
+    "prettier:ci": "prettier --check \"{src,projects}/**/*.{js,ts,html,scss,css,md,json}\""
   },
   "dependencies": {
     "@angular/animations": "~11.0.5",
