@@ -18,6 +18,7 @@ import { isPlatformBrowser } from '@angular/common';
   template: `
     <svg:g>
       <svg:rect
+        #tooltipArea
         class="tooltip-area"
         [attr.x]="0"
         y="0"
@@ -53,6 +54,7 @@ import { isPlatformBrowser } from '@angular/common';
         [tooltipTemplate]="tooltipTemplate ? tooltipTemplate : defaultTooltipTemplate"
         [tooltipContext]="anchorValues"
         [tooltipImmediateExit]="true"
+        [tooltipArea]="tooltipArea"
       />
     </svg:g>
   `,
