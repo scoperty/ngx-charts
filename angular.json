@@ -115,10 +115,10 @@
       }
     },
     "@swimlane/ngx-charts": {
-      "projectType": "library",
+      "projectType": "application",
       "root": "projects/swimlane/ngx-charts",
       "sourceRoot": "projects/swimlane/ngx-charts/src",
-      "prefix": "lib",
+      "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
