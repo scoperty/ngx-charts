@@ -3,6 +3,7 @@ node_modules/
 npm-debug.log
 compiled/
 build/
+dist/
 coverage/
 .idea
 yarn.lock
